@@ -23,8 +23,6 @@ function App() {
 
   //utilizar context en el componente
   const [auth, setAuth] = useContext(CRMContext);
-  console.log(process.env.REACT_APP_BACKEND_URL);
-
   return (
     <Router>
       <Fragment>

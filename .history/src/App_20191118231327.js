@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Header from "./components/layout/Header";
@@ -17,18 +17,11 @@ import Pedidos from './components/pedidos/Pedidos';
 import NuevoPedido from './components/pedidos/NuevoPedido';
 
 import Login from './components/auth/Login';
-import { CRMContext, CRMProvider } from './context/CRMContext';
 
 function App() {
-
-  //utilizar context en el componente
-  const [auth, setAuth] = useContext(CRMContext);
-  console.log(process.env.REACT_APP_BACKEND_URL);
-
   return (
     <Router>
       <Fragment>
-        <CRMProvider value={[auth, setAuth]}>
         <Header />
 
         <div className="grid contenedor contenido-principal">
@@ -51,7 +44,6 @@ function App() {
             </Switch>
           </main>
         </div>
-        </CRMProvider>
       </Fragment>
     </Router>
   );
